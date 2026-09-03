@@ -1,0 +1,75 @@
+<Layouts.flash_group flash={@flash} />
+<% # <main class="lowercase font-space-grotesk text-black flex border w-fit"> <% # grid display %1> %>
+
+<main class="lowercase font-space-grotesk text-black grid grid-cols-[auto_auto_auto_auto_auto] w-fit m-auto pb-10">
+
+  <div>
+    <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]">day Of Week</p>
+    <h1 class="select-none cursor-default tracking-[0.4rem] font-bold text-8xl">01</h1>
+  </div>
+
+
+  <div class="separator px-1">
+    <p class="invisible text-center">NaN</p>
+    <h1 class="select-none cursor-default separator tracking-[0.4rem] font-bold text-8xl -mt-1.5">-</h1>
+  </div>
+
+
+  <div>
+    <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]">month</p>
+    <h1 class="select-none cursor-default tracking-[0.4rem] font-bold text-8xl">01</h1>
+    <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]">season</p>
+  </div>
+
+
+  <div class="separator px-1">
+    <p class="invisible text-center">NaN</p>
+    <h1 class="select-none cursor-default separator tracking-[0.4rem] font-bold text-8xl -mt-1.5">-</h1>
+  </div>
+
+
+  <div>
+    <p class="invisible text-center">NaN</p>
+    <h1 class="select-none cursor-default tracking-[0.4rem] font-bold text-8xl">2026</h1>
+    <section class="flex font-inria-sans tracking-widest font-semibold text-[0.9rem] items-center space-x-3 mx-auto w-fit">
+      <div class="relative group/tooltip1">
+        <p class="cursor-pointer group"><span class="group-hover:underline group-hover:underline-offset-3">leap year</span>?</p>
+        <div id="next-leap-year" class="hidden
+                 group-hover/tooltip1:block
+                 before:h-3.5 before:w-20 before:left-1/2 before:-translate-x-1/2 before:bottom-full before:bg-red-500 before:absolute
+                 absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3"><span class="select-none">❯❯ &nbsp;</span>The next leap year will be in <strong>2222</strong><span class="select-none"> ❯❯</span></div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="group/tooltip2 relative">
+        <div id="not-a-leap-year" class="hidden select-none cursor-pointer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="9.5" fill="#FFB8CD" stroke="black"/>
+            <path d="M12.9999 7L7 12.9999" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.0001 7L13 12.9999" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+
+        <div id="is-a-leap-year" class="select-none cursor-pointer">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="9.5" fill="#C3E0D2" stroke="black"/>
+            <text x="10.9" y="14" text-anchor="middle" font-size="0.68rem" fill="black">✔</text>
+          </svg>
+        </div>
+
+        <div id="leap-year-info" class="hidden
+                 group-hover/tooltip2:block
+                 before:h-3.5 before:w-20 before:left-1/2 before:-translate-x-1/2 before:bottom-full before:bg-red-500 before:absolute
+                 absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3">2222 is not a leap year</div>
+      </div>
+    </section>
+
+  </div>
+</main>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- F O N T S -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title default="DateDisplay" suffix=" · Phoenix Framework" phx-no-format>{assigns[:page_title]}</.live_title>
+    <title>Date Display</title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}></script>
+  </head>
+  <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9]">
+
+    {@inner_content}
+  
+  </body>
+</html>
