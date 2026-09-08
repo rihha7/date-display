@@ -2,6 +2,11 @@ defmodule DateDisplayWeb.PageController do
   use DateDisplayWeb, :controller
 
   def home(conn, _params) do
-    render(conn, :home)
+    conn |> render(
+      :home,
+      date: "01",
+      month: "12",
+      year: "2026"
+    )
   end
 end

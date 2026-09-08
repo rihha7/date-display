@@ -16,8 +16,10 @@
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}></script>
   </head>
   <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9]">
+    <.render_dots top_left count={5} bg_colour={"bg-black"} />
 
     {@inner_content}
   
+    <.render_dots bottom_right count={5} />
   </body>
 </html>

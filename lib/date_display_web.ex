@@ -87,6 +87,18 @@ defmodule DateDisplayWeb do
       # Core UI components
       import DateDisplayWeb.CoreComponents
 
+
+      # icon components
+      import DateDisplayWeb.IconComponents
+      # date components
+      import DateDisplayWeb.DateComponents
+      # dots component
+      import DateDisplayWeb.DotsComponent
+
+
+
+
+
       # Common modules used in templates
       alias Phoenix.LiveView.JS
       alias DateDisplayWeb.Layouts
