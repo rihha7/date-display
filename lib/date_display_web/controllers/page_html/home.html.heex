@@ -13,9 +13,9 @@
   - push last column to bottom using mt-auto
 -->
 
-  <section class="grid grid-cols-[auto_auto_auto_auto_auto] mb-10">
+  <section class="grid grid-cols-[auto_auto_auto_auto_auto] mb-10 border max-[670px]:mb-2">
     <div class="mb-auto">
-      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none">day Of Week</p>
+      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none"><%= @day %></p>
       <.date_segment segment={@date} />
     </div>
 
@@ -23,16 +23,16 @@
     <.date_separator />
 
     <div>
-      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none pl-1">september</p>
-      <.date_segment segment={@month} />
-      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none -mt-0.5">autumn</p>
+      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none pl-1"><%= @month_name %></p>
+      <.date_segment segment={@month_numeric} />
+      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none -mt-0.5"><%= @season %></p>
     </div>
 
 
     <.date_separator />
 
     <div class="mt-auto">
-      <.date_segment year />
+      <.date_segment year segment={@year} />
 
       <section class="leap-year flex font-inria-sans tracking-widest font-semibold text-[0.9rem] items-center space-x-3 mx-auto w-fit -mt-0.75">
         <div class="relative group/tooltip1 [&:has(.hover-target:hover)>p>span]:underline">
@@ -41,7 +41,7 @@
                    bg-linear-to-r from-[#ABE9DE] to-[#F8B9D2]
                    group-hover/tooltip1:block
                    before:h-3 before:w-20 before:left-1/2 before:-translate-x-1/2 before:bottom-full before:absolute
-                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3"><span class="select-none">❯❯ &nbsp;</span>The next leap year will be in <strong>2222</strong><span class="select-none"> ❯❯</span></div>
+                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3"><span class="select-none max-[547px]:hidden">❯❯ &nbsp;</span>The next leap year will be in <strong><%= @next_leap_year %></strong><span class="select-none max-[547px]:hidden"> ❯❯</span></div>
         </div>
 
 
@@ -59,10 +59,13 @@
                    bg-(--circle-hover-fill)/60
                    group-hover/tooltip2:block
                    before:h-3.5 before:w-20 before:left-1/2 before:-translate-x-1/2 before:bottom-full before:absolute
-                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3">2222 is not a leap year</div>
+                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3 text-center max-[547px]:text-[0.855rem]/5 max-[547px]:py-1 max-[547px]:px-2.5">
+            <%= "#{@year} is " %> 
+            <%= not @is_leap_year && "not " %>
+            a <br class="hidden max-[547px]:inline"/>leap year
+          </div>
         </div>
       </section>
-
       </div>
   </section>
 </main>
