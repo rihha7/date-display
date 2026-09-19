@@ -1,21 +1,10 @@
 <Layouts.flash_group flash={@flash} />
 
-<main class="m-auto lowercase font-space-grotesk text-black">
+<main class="m-auto font-space-grotesk text-black">
 
-<!--
-  GRID:
-
-  5 columns (flex span inside div next to h1)
-  1 row
-
-  - push first column to top using mb-auto
-  - align separator in middle using my-auto
-  - push last column to bottom using mt-auto
--->
-
-  <section class="grid grid-cols-[auto_auto_auto_auto_auto] mb-10 border max-[670px]:mb-2">
+  <section class="grid grid-cols-[auto_auto_auto_auto_auto] min-[1050px]:mb-5 [@media(max-height:430px)]:mt-10 ml-1.5 max-[690px]:ml-4">
     <div class="mb-auto">
-      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none"><%= @day %></p>
+      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none max-[725px]:text-[0.875rem]"><%= @day %></p>
       <.date_segment segment={@date} />
     </div>
 
@@ -23,9 +12,9 @@
     <.date_separator />
 
     <div>
-      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none pl-1"><%= @month_name %></p>
+      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none pl-1 max-[725px]:text-[0.875rem]"><%= @month_name %></p>
       <.date_segment segment={@month_numeric} />
-      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none -mt-0.5"><%= @season %></p>
+      <p class="text-center font-semibold font-inria-sans tracking-widest text-[0.9rem]/none -mt-0.5 max-[725px]:text-[0.875rem]"><%= @season %></p>
     </div>
 
 
@@ -34,14 +23,17 @@
     <div class="mt-auto">
       <.date_segment year segment={@year} />
 
-      <section class="leap-year flex font-inria-sans tracking-widest font-semibold text-[0.9rem] items-center space-x-3 mx-auto w-fit -mt-0.75">
+      <section class="leap-year flex font-inria-sans tracking-widest font-semibold text-[0.9rem] max-[725px]:text-[0.875rem] items-center space-x-3 mx-auto w-fit -mt-0.75">
         <div class="relative group/tooltip1 [&:has(.hover-target:hover)>p>span]:underline">
-          <p class="cursor-pointer leading-none group select-none"><span class="hover:underline underline-offset-3">leap year</span>?</p>
+          <p id="leap-year-question" class="cursor-pointer leading-none group select-none"><%= gettext("leap year?") %></p>
           <div id="next-leap-year" class="hover-target hidden
                    bg-linear-to-r from-[#ABE9DE] to-[#F8B9D2]
                    group-hover/tooltip1:block
                    before:h-3 before:w-20 before:left-1/2 before:-translate-x-1/2 before:bottom-full before:absolute
-                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3"><span class="select-none max-[547px]:hidden">❯❯ &nbsp;</span>The next leap year will be in <strong><%= @next_leap_year %></strong><span class="select-none max-[547px]:hidden"> ❯❯</span></div>
+                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3 text-center">
+            <span class="select-none max-[614px]:hidden">❯❯</span>
+            <span id="next-leap" class="inline-block mx-1"><%= gettext("the next leap year will be in %{year}", year: @next_leap_year) %></span>
+            <span class="select-none max-[614px]:hidden">❯❯</span></div>
         </div>
 
 
@@ -52,18 +44,17 @@
 
 
         <% # is leap year fill = [#9dd998], not = [#E89E99] %>
-        <div class="group/tooltip2 relative [--circle-hover-fill:#9dd998] [&:has(.hover-target:hover)>div:not(.hidden)>svg>circle]:fill-(--circle-hover-fill)">
-          <.leap_year_icon />
+        <div class={"group/tooltip2 relative
+             #{if @is_leap_year, do: "[--circle-hover-fill:#9dd998]", else: "[--circle-hover-fill:#E89E99]"}
+             [&:has(.hover-target:hover)>div:not(.hidden)>svg>circle]:fill-(--circle-hover-fill)"}>
+
+          <.leap_year_icon is_leap={@is_leap_year} />
           
           <div id="leap-year-info" class="hover-target hidden
-                   bg-(--circle-hover-fill)/60
+                   bg-(--circle-hover-fill)/70
                    group-hover/tooltip2:block
                    before:h-3.5 before:w-20 before:left-1/2 before:-translate-x-1/2 before:bottom-full before:absolute
-                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3 text-center max-[547px]:text-[0.855rem]/5 max-[547px]:py-1 max-[547px]:px-2.5">
-            <%= "#{@year} is " %> 
-            <%= not @is_leap_year && "not " %>
-            a <br class="hidden max-[547px]:inline"/>leap year
-          </div>
+                   absolute py-0.5 border rounded-sm whitespace-nowrap tracking-wider font-medium px-2 -translate-x-1/2 left-1/2 mt-3 text-center max-[640px]:text-[0.855rem] max-[640px]:py-1 max-[640px]:px-2.5"><%= @leap_year_msg %></div>
         </div>
       </section>
       </div>

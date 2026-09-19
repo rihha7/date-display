@@ -1,0 +1,143 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: lib/date_display_web/components/core_components.ex:375
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr ""
+
+#: lib/date_display_web/components/layouts.ex:102
+#: lib/date_display_web/components/layouts.ex:117
+#, elixir-autogen, elixir-format
+msgid "Attempting to reconnect"
+msgstr ""
+
+#: lib/date_display_web/components/layouts.ex:109
+#, elixir-autogen, elixir-format
+msgid "Something went wrong!"
+msgstr ""
+
+#: lib/date_display_web/components/layouts.ex:94
+#, elixir-autogen, elixir-format
+msgid "We can't find the internet"
+msgstr ""
+
+#: lib/date_display_web/components/core_components.ex:81
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr ""
+
+
+
+
+
+
+
+
+
+
+
+
+### translations...
+
+msgid "completed"
+msgstr ""
+
+# --- days of week ---
+
+msgid "monday"
+msgstr ""
+
+msgid "tuesday"
+msgstr ""
+
+msgid "wednesday"
+msgstr ""
+
+msgid "thursday"
+msgstr ""
+
+msgid "friday"
+msgstr ""
+
+msgid "saturday"
+msgstr ""
+
+msgid "sunday"
+msgstr ""
+
+# --- months of year ---
+
+msgid "january"
+msgstr ""
+
+msgid "february"
+msgstr ""
+
+msgid "march"
+msgstr ""
+
+msgid "april"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "june"
+msgstr ""
+
+msgid "july"
+msgstr ""
+
+msgid "august"
+msgstr ""
+
+msgid "september"
+msgstr ""
+
+msgid "october"
+msgstr ""
+
+msgid "november"
+msgstr ""
+
+msgid "december"
+msgstr ""
+
+# ---
+
+msgid "leap year?"
+msgstr ""
+
+msgid "%{year} is a year"
+msgstr ""
+
+msgid "%{year} is not a leap year"
+msgstr ""
+
+msgid "the next leap year will be in %{year}"
+msgstr ""
+
+# --- seasons ---
+
+msgid "spring"
+msgstr "" 
+
+msgid "summer"  
+msgstr ""
+
+msgid "autumn"  
+msgstr ""
+
+msgid "winter"  
+msgstr ""

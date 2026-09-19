@@ -97,8 +97,6 @@
       }
     }
 
-    // window resize fires repeatedly while the browser is being resized == too many
-    // window.addEventListener('resize', handleBreakpoint);
     medium.addEventListener('change', handleBreakpoint);
     large.addEventListener('change', handleBreakpoint);
   });

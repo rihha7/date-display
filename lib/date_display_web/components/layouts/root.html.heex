@@ -15,25 +15,25 @@
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}></script>
   </head>
-  <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9]">
+  <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9] relative">
     <.render_dots top_left count={5} bg_colour={"bg-black"} />
+
+    <.render_dots bottom_right count={5} />
 
     {@inner_content}
   
-    <.render_dots bottom_right count={5} />
+    <footer class="flex text-black justify-between pb-2 pl-2 pr-3.5 select-none">
+      <!-- left -->
+      <.lang_btns />      
+
+      <!-- right -->
+      <div class="font-inria-sans h-6 tracking-wide text-[0.89rem] cursor-pointer font-semibold">
+        <u class="decoration-wavy underline-offset-2 decoration-1 decoration-[#6d77ee]
+                  hover:text-[#2a3182] hover:decoration-black transition-colors duration-150">completed: <time datetime="2026-09-19 13:30">dd-mm-yy</time></u>
+      </div>
+    </footer>
   </body>
 
 
-  <footer class="flex text-black justify-between pb-2 pl-2 pr-3.5 select-none">
-    <!-- left -->
-    <div class="space-x-0.5 font-space-grotesk">
-      <button class="cursor-pointer border-[1.5px] border-[#3a3182] hover:bg-[#6d77ee]/50 hover:border-black uppercase font-bold text-[0.8rem] pt-0.5 px-1.5 tracking-wider rounded-xs">en</button>
-      <button class="cursor-pointer border-[1.5px] border-[#3a3182] hover:bg-[#6d77ee]/50 hover:border-black uppercase font-bold text-[0.8rem] pt-0.5 px-1.5 tracking-wider rounded-xs">es</button>
-      <button class="cursor-pointer border-[1.5px] border-[#3a3182] hover:bg-[#6d77ee]/50 hover:border-black uppercase font-bold text-[0.8rem] pt-0.5 px-1.5 tracking-wider rounded-xs">de</button>
-    </div>
-
-    <!-- right -->
-    <div class="font-inria-sans"><u class="decoration-wavy underline-offset-2 decoration-1 tracking-wide text-[0.89rem] cursor-pointer font-semibold decoration-[#6d77ee]
-    hover:text-[#2a3182] hover:decoration-black">completed: dd-mm-yy</u></div>
-  </footer>
+  
 </html>

@@ -12,14 +12,15 @@ defmodule DateDisplayWeb.PageController do
 
     conn |> render(
       :home,
-      day: day_of_week,
+      day: gettext_value(day_of_week),
       date: pad(current.day, 2),
-      month_name: month,
+      month_name: gettext_value(month),
       month_numeric: pad(current.month, 2),
       year: pad(current.year, 4),
 
-      season: month |> get_season,
+      season: gettext_value(month |> get_season),
       is_leap_year: current.year |> is_leap_year?,
+      leap_year_msg: current.year |> leap_msg |> gettext_value,
       next_leap_year: current.year + 1 |> next_leap
     )
   end
@@ -27,6 +28,12 @@ defmodule DateDisplayWeb.PageController do
   defp pad(n, lead), do: String.pad_leading("#{n}", lead, "0")
 
   defp is_leap_year?(y), do: (rem(y, 4) == 0 and rem(y, 100) != 0) or rem(y, 400) == 0
+
+  defp leap_msg(y) do
+    if is_leap_year?(y),
+      do: gettext("%{year} is a leap year", year: y),
+      else: gettext("%{year} is not a leap year", year: y)
+  end
 
   defp next_leap(y) do
     if is_leap_year?(y),
@@ -42,4 +49,7 @@ defmodule DateDisplayWeb.PageController do
       month in ~w(september october november) -> "autumn"
     end
   end
+
+  # Gettext
+  defp gettext_value(value), do: Gettext.gettext(DateDisplayWeb.Gettext, value)
 end

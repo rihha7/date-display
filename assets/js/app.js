@@ -83,3 +83,5 @@ if (process.env.NODE_ENV === "development") {
 
 
 import "./hover-target-width"
+import "./set-site-language"
+import "./ui-helpers"

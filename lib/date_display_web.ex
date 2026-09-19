@@ -88,14 +88,15 @@ defmodule DateDisplayWeb do
       import DateDisplayWeb.CoreComponents
 
 
-      # icon components
+
+      # my icon components
       import DateDisplayWeb.IconComponents
-      # date components
+      # my date components
       import DateDisplayWeb.DateComponents
-      # dots component
+      # my dots component
       import DateDisplayWeb.DotsComponent
-
-
+      # my footer components
+      import DateDisplayWeb.FooterComponents
 
 
 

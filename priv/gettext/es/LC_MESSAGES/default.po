@@ -1,0 +1,140 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: lib/date_display_web/components/core_components.ex:375
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr ""
+
+#: lib/date_display_web/components/layouts.ex:102
+#: lib/date_display_web/components/layouts.ex:117
+#, elixir-autogen, elixir-format
+msgid "Attempting to reconnect"
+msgstr ""
+
+#: lib/date_display_web/components/layouts.ex:109
+#, elixir-autogen, elixir-format
+msgid "Something went wrong!"
+msgstr ""
+
+#: lib/date_display_web/components/layouts.ex:94
+#, elixir-autogen, elixir-format
+msgid "We can't find the internet"
+msgstr ""
+
+#: lib/date_display_web/components/core_components.ex:81
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr ""
+
+
+
+
+
+
+
+
+
+### translations...
+
+msgid "completed"
+msgstr "finalizado"
+
+# --- days of week ---
+
+msgid "monday"
+msgstr "lunes"
+
+msgid "tuesday"
+msgstr "martes"
+
+msgid "wednesday"
+msgstr "miércoles"
+
+msgid "thursday"
+msgstr "jueves"
+
+msgid "friday"
+msgstr "viernes"
+
+msgid "saturday"
+msgstr "sábado"
+
+msgid "sunday"
+msgstr "domingo"
+
+# --- months of year ---
+
+msgid "january"
+msgstr "enero"
+
+msgid "february"
+msgstr "febrero"
+
+msgid "march"
+msgstr "marzo"
+
+msgid "april"
+msgstr "abril"
+
+msgid "may"
+msgstr "mayo"
+
+msgid "june"
+msgstr "junio"
+
+msgid "july"
+msgstr "julio"
+
+msgid "august"
+msgstr "agosto"
+
+msgid "september"
+msgstr "septiembre"
+
+msgid "october"
+msgstr "octubre"
+
+msgid "november"
+msgstr "noviembre"
+
+msgid "december"
+msgstr "diciembre"
+
+# ---
+
+msgid "leap year?"
+msgstr "¿año bisiesto?"
+
+msgid "%{year} is a leap year"
+msgstr "%{year} es un año bisiesto"
+
+msgid "%{year} is not a leap year"
+msgstr "%{year} no es un año bisiesto"
+
+msgid "the next leap year will be in %{year}"
+msgstr "el año bisiesto que viene será en %{year}"
+
+# --- seasons ---
+
+msgid "spring"
+msgstr "primavera" 
+
+msgid "summer"  
+msgstr "verano"
+
+msgid "autumn"  
+msgstr "otoño"
+
+msgid "winter"  
+msgstr "invierno"
