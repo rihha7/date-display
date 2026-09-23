@@ -46,7 +46,7 @@ msgstr ""
 ### translations...
 
 msgid "completed"
-msgstr "abgeschlossen"
+msgstr "Abgeschlossen"
 
 # --- days of week ---
 
@@ -121,7 +121,7 @@ msgid "%{year} is not a leap year"
 msgstr "%{year} ist kein Schaltjahr"
 
 msgid "the next leap year will be in %{year}"
-msgstr "das nächste Schaltjahr wird %{year} sein"
+msgstr "das nächste Schaltjahr ist %{year}"
 
 # --- seasons ---
 

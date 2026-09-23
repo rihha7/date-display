@@ -14,7 +14,7 @@ defmodule DateDisplayWeb.DotsComponent do
       "max-[570px]:bottom-0", "max-[570px]:h-min", "max-[570px]:top-2", "max-[570px]:flex"
     ]}>
       <%= for _ <- 1..@count do %>
-        <div class={"#{@bg_colour} w-[6px] h-[6px] border-[1.5px] border-black rounded-full my-4 max-[870px]:my-3.5 max-[570px]:mx-1.75"}></div>
+        <div class={"#{@bg_colour} w-1.5 h-1.5 border-[1.5px] border-black rounded-full my-4 max-[870px]:my-3.5 max-[570px]:mx-1.75"}></div>
       <% end %>
     </section>
     """

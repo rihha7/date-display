@@ -1,29 +1,33 @@
 defmodule DateDisplayWeb.PageController do
   use DateDisplayWeb, :controller
 
+  @local        NaiveDateTime.local_now
   @days_of_week ~w(monday tuesday wednesday thursday friday saturday sunday)
-  @month ~w(january february march april may june july august september october november december)
+  @month        ~w(january february march april may june july august september october november december)
+
+  def index(conn, _params), do: render(conn, :index, date: pad(@local.day, 2))
 
   def home(conn, _params) do
-    current = NaiveDateTime.local_now
-    day_of_week = current |> NaiveDateTime.to_date |> Date.day_of_week
-    day_of_week = @days_of_week |> Enum.at(day_of_week - 1) 
-    month = @month |> Enum.at(current.month - 1)
+    day_index = @local |> NaiveDateTime.to_date |> Date.day_of_week
+    day_of_week = @days_of_week |> Enum.at(day_index - 1) 
+    month = @month |> Enum.at(@local.month - 1)
 
     conn |> render(
       :home,
       day: gettext_value(day_of_week),
-      date: pad(current.day, 2),
+      date: pad(@local.day, 2),
       month_name: gettext_value(month),
-      month_numeric: pad(current.month, 2),
-      year: pad(current.year, 4),
+      month_numeric: pad(@local.month, 2),
+      year: pad(@local.year, 4),
 
       season: gettext_value(month |> get_season),
-      is_leap_year: current.year |> is_leap_year?,
-      leap_year_msg: current.year |> leap_msg |> gettext_value,
-      next_leap_year: current.year + 1 |> next_leap
+      is_leap_year: @local.year |> is_leap_year?,
+      leap_year_msg: @local.year |> leap_msg |> gettext_value,
+      next_leap_year: @local.year + 1 |> next_leap_msg
     )
   end
+
+  # -----
 
   defp pad(n, lead), do: String.pad_leading("#{n}", lead, "0")
 
@@ -35,10 +39,10 @@ defmodule DateDisplayWeb.PageController do
       else: gettext("%{year} is not a leap year", year: y)
   end
 
-  defp next_leap(y) do
+  defp next_leap_msg(y) do
     if is_leap_year?(y),
-      do: y,
-      else: next_leap(y + 1)
+      do: gettext("the next leap year will be in %{year}", year: y),
+      else: next_leap_msg(y + 1)
   end
 
   defp get_season(month) do

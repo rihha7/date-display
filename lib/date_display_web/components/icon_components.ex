@@ -11,6 +11,7 @@ defmodule DateDisplayWeb.IconComponents do
         <%= if @is_leap do %>
           <circle class="is_leap_year" cx="10" cy="10" r="9.5" fill="#aff7a8" stroke="black"/>
           <text class="is_leap_year" x="10.9" y="14" text-anchor="middle" font-size="0.68rem" fill="black">✔</text>
+
         <% else %>
           <circle class="not_leap_year" cx="10" cy="10" r="9.5" fill="#f7ada8" stroke="black"/>
           <path class="not_leap_year" d="M12.9999 7L7 12.9999" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -21,4 +22,5 @@ defmodule DateDisplayWeb.IconComponents do
     </div>
     """
   end
+
 end

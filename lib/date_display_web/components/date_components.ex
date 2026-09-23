@@ -19,12 +19,28 @@ defmodule DateDisplayWeb.DateComponents do
     """
   end
 
+  
+
 
   def date_separator(assigns) do
     ~H"""
     <div class="separator px-1 max-[580px]:px-0 my-auto">
       <h1 class="select-none cursor-default separator tracking-[0.4rem] font-bold text-8xl max-[725px]:text-[4.5rem] -mt-3">-</h1>
     </div>
+    """
+  end
+
+
+
+
+  attr :bottom, :boolean, default: false
+  attr :info, :string, default: "unknown"
+
+  def date_info(assigns) do
+    ~H"""
+    <p class={"text-center font-semibold font-inria-sans tracking-widest text-[1.05rem]/none #{@bottom && "-mt-0.5"} max-[725px]:text-[0.9rem] py-1 max-[725px]:py-[2.5px]"}>
+      <%= @info %>
+    </p>
     """
   end
 end

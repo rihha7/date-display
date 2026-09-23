@@ -16,13 +16,9 @@
         : btn.classList.add("hover:bg-[#6d77ee]/50", "hover:border-black");
       
       btn.addEventListener("click", e => {
-        // 3. update AND set the "lang" query param if btn is pressed
+        // 3. update by setting in localStorage, href="..." will handle query param
         lang = e.currentTarget.textContent;
         localStorage.setItem("site-language", lang);
-
-        // if i dont update the URL here, it'll update only after page loads (1 btn late)
-        url.searchParams.set("lang", lang);
-        window.history.replaceState({}, "", url);
       });
     });
   });

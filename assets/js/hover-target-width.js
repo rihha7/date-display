@@ -54,8 +54,10 @@
         existingHeight = Number(existingHeight.match(/[\d.]+/)?.[0] || 0);
 
         hoverTarget.style.width = (dateSegment.length == 2)
-          ? `${existingWidth - 1.5}rem`
-          : `${existingWidth - 3.6}rem`;
+          ? `${existingWidth - 1.7}rem`
+          : `${existingWidth - 3.8}rem`;
+
+        hoverTarget.style.height = `${existingHeight - 1.25}rem`;
       });
     }
 

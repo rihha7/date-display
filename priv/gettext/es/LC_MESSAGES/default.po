@@ -123,7 +123,7 @@ msgid "%{year} is not a leap year"
 msgstr "%{year} no es un año bisiesto"
 
 msgid "the next leap year will be in %{year}"
-msgstr "el año bisiesto que viene será en %{year}"
+msgstr "el año bisiesto que viene será %{year}"
 
 # --- seasons ---
 

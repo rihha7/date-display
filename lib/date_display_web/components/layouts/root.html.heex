@@ -10,14 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <meta name="csrf-token" content={get_csrf_token()} />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" />
+
     <.live_title default="DateDisplay" suffix=" · Phoenix Framework" phx-no-format>{assigns[:page_title]}</.live_title>
     <title>Date Display</title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}></script>
   </head>
-  <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9] relative">
-    <.render_dots top_left count={5} bg_colour={"bg-black"} />
 
+
+  <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9] relative">
+
+    <.render_dots top_left count={5} bg_colour={"bg-black"} />
     <.render_dots bottom_right count={5} />
 
     {@inner_content}
@@ -27,10 +33,7 @@
       <.lang_btns />      
 
       <!-- right -->
-      <div class="font-inria-sans h-6 tracking-wide text-[0.89rem] cursor-pointer font-semibold">
-        <u class="decoration-wavy underline-offset-2 decoration-1 decoration-[#6d77ee]
-                  hover:text-[#2a3182] hover:decoration-black transition-colors duration-150">completed: <time datetime="2026-09-19 13:30">dd-mm-yy</time></u>
-      </div>
+      <.date_of_completion />
     </footer>
   </body>
 
