@@ -2,7 +2,6 @@
   window.addEventListener("DOMContentLoaded", () => {
     const h1Wrapper = document.querySelectorAll("#h1-wrapper");
 
-    // large
     const setDefaultWidths = () => {
       h1Wrapper.forEach(wrapper => {
         const dateSegment = wrapper.querySelector("h1").innerHTML;
@@ -14,7 +13,8 @@
         hoverTarget.style.width = "";
         hoverTarget.style.height = "";
 
-        // 2. set new default widths for large
+
+        // 2. set default=larger hover target widths (i.e., page width > 725px)
         if (dateSegment.length === 2) {
           if (dateSegment === "11") {
             hoverTarget.classList.add("w-[5.5rem]");
@@ -37,13 +37,13 @@
           };
 
           widthHandlers[oneCount]();
-        };
+        }
       });
     };
 
 
-    // medium
-    const responsiveHoverSize = () => {
+
+    const setMediumWidths = () => {
       h1Wrapper.forEach(wrapper => {
         const dateSegment = wrapper.querySelector("h1").innerHTML;
         const hoverTarget = wrapper.querySelector("div#h1-hover-target");
@@ -59,35 +59,36 @@
 
         hoverTarget.style.height = `${existingHeight - 1.25}rem`;
       });
-    }
+    };
 
-    // concept:
-    // 1. ALWAYS (first):      setDefaultWidths() // large
-    // 2. if current = medium: setMedium()
+
+    // Concept:
+    // 1. First, always:       setDefaultWidths() // large
+    // 2. if current = medium: setMediumWidths()
     // 3. medium -> large:     setDefaultWidths()
-    // 4. large -> medium:     setMedium()
+    // 4. large -> medium:     setMediumWidths()
 
 
-    
     // -----------------------------------------------------------
-    // 1) call function to normalize width
-    const currentPageWidth = window.innerWidth;
-    let size = (currentPageWidth <= 725) ? "medium" : "large";
-    setDefaultWidths(); // default hover target widths for large
-    if (size === "medium") responsiveHoverSize(size);
 
-    
-    // 2) on resize
+
+    const currentPageWidth = window.innerWidth;
+    let size = (currentPageWidth < 725) ? "medium" : "large";
+    setDefaultWidths(); // first, set hover target width to default=large
+    if (size === "medium") setMediumWidths(size);
+
+
+    // page resizing...
     const [medium, large] = [
-      window.matchMedia('(width <= 725px)'),
-      window.matchMedia('(726px <= width)'),
+      window.matchMedia('(width < 725px)'),
+      window.matchMedia('(725px <= width)'),
     ];
 
     function handleBreakpoint() {
       if (medium.matches) {
         if (size === "large") {
           size = "medium";
-          responsiveHoverSize();
+          setMediumWidths();
           console.log("med -> large");
         }
       } else if (large.matches) {

@@ -16,18 +16,18 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: lib/date_display_web/components/layouts.ex:102
-#: lib/date_display_web/components/layouts.ex:117
+#: lib/date_display_web/components/layouts.ex:41
+#: lib/date_display_web/components/layouts.ex:56
 #, elixir-autogen, elixir-format
 msgid "Attempting to reconnect"
 msgstr ""
 
-#: lib/date_display_web/components/layouts.ex:109
+#: lib/date_display_web/components/layouts.ex:48
 #, elixir-autogen, elixir-format
 msgid "Something went wrong!"
 msgstr ""
 
-#: lib/date_display_web/components/layouts.ex:94
+#: lib/date_display_web/components/layouts.ex:33
 #, elixir-autogen, elixir-format
 msgid "We can't find the internet"
 msgstr ""
@@ -37,102 +37,142 @@ msgstr ""
 msgid "close"
 msgstr ""
 
-
-
-
-
-
-
-### translations...
-
-msgid "completed"
-msgstr "Abgeschlossen"
-
-# --- days of week ---
-
-msgid "monday"
-msgstr "Montag"
-
-msgid "tuesday"
-msgstr "Dienstag"
-
-msgid "wednesday"
-msgstr "Mittwoch"
-
-msgid "thursday"
-msgstr "Donnerstag"
-
-msgid "friday"
-msgstr "Freitag"
-
-msgid "saturday"
-msgstr "Samstag"
-
-msgid "sunday"
-msgstr "Sonntag"
-
-# --- months of year ---
-
-msgid "january"
-msgstr "Januar"
-
-msgid "february"
-msgstr "Februar"
-
-msgid "march"
-msgstr "März"
-
-msgid "april"
-msgstr "April"
-
-msgid "may"
-msgstr "Mai"
-
-msgid "june"
-msgstr "Juni"
-
-msgid "july"
-msgstr "Juli"
-
-msgid "august"
-msgstr "August"
-
-msgid "september"
-msgstr "September"
-
-msgid "october"
-msgstr "Oktober"
-
-msgid "november"
-msgstr "November"
-
-msgid "december"
-msgstr "Dezember"
-
-# ---
-
-msgid "leap year?"
-msgstr "Schaltjahr?"
-
+#: lib/date_display_web/controllers/page_controller.ex:33
+#, elixir-autogen, elixir-format
 msgid "%{year} is a leap year"
 msgstr "%{year} ist ein Schaltjahr"
 
+#: lib/date_display_web/controllers/page_controller.ex:34
+#, elixir-autogen, elixir-format
 msgid "%{year} is not a leap year"
 msgstr "%{year} ist kein Schaltjahr"
 
+#: lib/date_display_web/controllers/page_controller.ex:61
+#, elixir-autogen, elixir-format
+msgid "april"
+msgstr "April"
+
+#: lib/date_display_web/controllers/page_controller.ex:65
+#, elixir-autogen, elixir-format
+msgid "august"
+msgstr "August"
+
+#: lib/date_display_web/controllers/page_controller.ex:46
+#, elixir-autogen, elixir-format
+msgid "autumn"
+msgstr "Herbst"
+
+#: lib/date_display_web/components/footer_components.ex:18
+#, elixir-autogen, elixir-format
+msgid "completed"
+msgstr "Abgeschlossen"
+
+#: lib/date_display_web/controllers/page_controller.ex:69
+#, elixir-autogen, elixir-format
+msgid "december"
+msgstr "Dezember"
+
+#: lib/date_display_web/controllers/page_controller.ex:59
+#, elixir-autogen, elixir-format
+msgid "february"
+msgstr "Februar"
+
+#: lib/date_display_web/controllers/page_controller.ex:53
+#, elixir-autogen, elixir-format
+msgid "friday"
+msgstr "Freitag"
+
+#: lib/date_display_web/controllers/page_controller.ex:58
+#, elixir-autogen, elixir-format
+msgid "january"
+msgstr "Januar"
+
+#: lib/date_display_web/controllers/page_controller.ex:64
+#, elixir-autogen, elixir-format
+msgid "july"
+msgstr "Juli"
+
+#: lib/date_display_web/controllers/page_controller.ex:63
+#, elixir-autogen, elixir-format
+msgid "june"
+msgstr "Juni"
+
+#: lib/date_display_web/controllers/page_html.ex:21
+#, elixir-autogen, elixir-format
+msgid "leap year?"
+msgstr "Schaltjahr?"
+
+#: lib/date_display_web/controllers/page_controller.ex:60
+#, elixir-autogen, elixir-format
+msgid "march"
+msgstr "März"
+
+#: lib/date_display_web/controllers/page_controller.ex:62
+#, elixir-autogen, elixir-format
+msgid "may"
+msgstr "Mai"
+
+#: lib/date_display_web/controllers/page_controller.ex:49
+#, elixir-autogen, elixir-format
+msgid "monday"
+msgstr "Montag"
+
+#: lib/date_display_web/controllers/page_controller.ex:68
+#, elixir-autogen, elixir-format
+msgid "november"
+msgstr "November"
+
+#: lib/date_display_web/controllers/page_controller.ex:67
+#, elixir-autogen, elixir-format
+msgid "october"
+msgstr "Oktober"
+
+#: lib/date_display_web/controllers/page_controller.ex:54
+#, elixir-autogen, elixir-format
+msgid "saturday"
+msgstr "Samstag"
+
+#: lib/date_display_web/controllers/page_controller.ex:66
+#, elixir-autogen, elixir-format
+msgid "september"
+msgstr "September"
+
+#: lib/date_display_web/controllers/page_controller.ex:44
+#, elixir-autogen, elixir-format
+msgid "spring"
+msgstr "Frühling"
+
+#: lib/date_display_web/controllers/page_controller.ex:45
+#, elixir-autogen, elixir-format
+msgid "summer"
+msgstr "Sommer"
+
+#: lib/date_display_web/controllers/page_controller.ex:55
+#, elixir-autogen, elixir-format
+msgid "sunday"
+msgstr "Sonntag"
+
+#: lib/date_display_web/controllers/page_controller.ex:39
+#, elixir-autogen, elixir-format
 msgid "the next leap year will be in %{year}"
 msgstr "das nächste Schaltjahr ist %{year}"
 
-# --- seasons ---
+#: lib/date_display_web/controllers/page_controller.ex:52
+#, elixir-autogen, elixir-format
+msgid "thursday"
+msgstr "Donnerstag"
 
-msgid "spring"
-msgstr "Frühling" 
+#: lib/date_display_web/controllers/page_controller.ex:50
+#, elixir-autogen, elixir-format
+msgid "tuesday"
+msgstr "Dienstag"
 
-msgid "summer"  
-msgstr "Sommer"
+#: lib/date_display_web/controllers/page_controller.ex:51
+#, elixir-autogen, elixir-format
+msgid "wednesday"
+msgstr "Mittwoch"
 
-msgid "autumn"  
-msgstr "Herbst"
-
-msgid "winter"  
+#: lib/date_display_web/controllers/page_controller.ex:43
+#, elixir-autogen, elixir-format
+msgid "winter"
 msgstr "Winter"

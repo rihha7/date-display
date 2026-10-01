@@ -15,7 +15,7 @@ defmodule DateDisplayWeb.FooterComponents do
   def date_of_completion(assigns) do
     ~H"""
     <div class="font-inria-sans h-6 tracking-wide text-[0.89rem] cursor-pointer font-semibold">
-      <u class="decoration-wavy underline-offset-2 decoration-1 decoration-[#6d77ee] hover:text-[#2a3182] hover:decoration-black transition-colors duration-150"><%= gettext("completed") %>: <time datetime="2026-09-19 13:30">dd-mm-yy</time></u>
+      <u class="decoration-wavy underline-offset-2 decoration-1 decoration-[#6d77ee] hover:text-[#2a3182] hover:decoration-black transition-colors duration-150"><%= gettext("completed") %>: <time datetime="2026-10-01 16:50">01-10-2026</time></u>
     </div>
     """
   end

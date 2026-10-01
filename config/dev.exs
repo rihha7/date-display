@@ -13,7 +13,7 @@ config :date_display, DateDisplayWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "HCL4KG5ukEAvZtGUf7/bqJBSsyW3WmArQaoaVkkG/Ol32jog3x3O9OIW2/fq91LW",
+  secret_key_base: System.fetch_env!("DEV_SECRET_KEY_BASE"),
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:date_display, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:date_display, ~w(--watch)]}
@@ -62,6 +62,3 @@ config :phoenix_live_view,
   debug_attributes: true,
   # Enable helpful, but potentially expensive runtime checks
   enable_expensive_runtime_checks: true
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
