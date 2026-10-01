@@ -1,5 +1,7 @@
 (() => {
   window.addEventListener("DOMContentLoaded", () => {
+    
+    // Sets underline hover styles for "leap year?"
     const leapYrQuestion = document.getElementById("leap-year-question");
     const text = leapYrQuestion.textContent.match(/[^¿?]+/)?.[0] ?? "";
 
@@ -13,10 +15,8 @@
     leapYrQuestion.appendChild(document.createTextNode("?"));
     
 
-    // --------------------------------------------------
-    // --------------------------------------------------
-
-
+ 
+    // Styles next leap year tooltip, wrapping year in <strong>, and adding a breakpoint
     const nextLeap = document.getElementById("next-leap");
     const [nextLeap1, nextLeapYr] = nextLeap.textContent.split(/(?<=ist)|(?<=be in)|(?<=será)/);
     
@@ -31,9 +31,8 @@
     nextLeap.appendChild(strongYear);
     
 
-    // --------------------------------------------------
-    // --------------------------------------------------
 
+    // Formats date of completion using periods instead of hyphens for German
     const dateOfCompletion = document.querySelector("time[datetime]");
     const isGerman = dateOfCompletion.parentElement.textContent.startsWith("Abgeschlossen");
 

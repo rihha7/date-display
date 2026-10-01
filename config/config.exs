@@ -19,21 +19,13 @@ config :date_display, DateDisplayWeb.Endpoint,
     layout: false
   ],
   pubsub_server: DateDisplay.PubSub,
-  live_view: [signing_salt: "24q5SdtP"]
+  live_view: [signing_salt: System.fetch_env!("LIVE_VIEW_SIGNING_SALT")]
 
 # Configure LiveView
 config :phoenix_live_view,
   # the attribute set on all root tags. Used for Phoenix.LiveView.ColocatedCSS.
   root_tag_attribute: "phx-r"
 
-# Configure the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :date_display, DateDisplay.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,

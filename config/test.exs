@@ -4,14 +4,8 @@ import Config
 # you can enable the server option below.
 config :date_display, DateDisplayWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "WXmxYi5gVm7cSuQpt09Ne+5RVhPZnQhyjZED0WbssZLrGITzwLyvsDb4j1BbjD28",
+  secret_key_base: System.fetch_env!("TEST_SECRET_KEY_BASE"),
   server: false
-
-# In test we don't send emails
-config :date_display, DateDisplay.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters
-config :swoosh, :api_client, false
 
 # Print only warnings and errors during test
 config :logger, level: :warning

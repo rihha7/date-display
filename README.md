@@ -1,13 +1,18 @@
 # DateDisplay
 
-To start your Phoenix server:
+A simple Phoenix web application that displays the current date.</br>Also displays the current day of the week, month and season, and also indicates whether the current year is a leap year and when the next upcoming leap year will be.
 
-* Run `mix setup` to install and setup dependencies
-* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Requirements
+- `Elixir`
+- `Phoenix`
+- `Erlang/OTP`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Installation / Setup
+- Clone the repository.
+- Run `mix setup` to install and setup dependencies.
+- Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`.
 
-Ready to run in production? Please [check our deployment guides](https://phoenix.hexdocs.pm/deployment.html).
+> Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Learn more
 

@@ -1,29 +1,24 @@
 defmodule DateDisplayWeb.PageController do
   use DateDisplayWeb, :controller
-
-  @local        NaiveDateTime.local_now
-  @days_of_week ~w(monday tuesday wednesday thursday friday saturday sunday)
-  @month        ~w(january february march april may june july august september october november december)
-
-  def index(conn, _params), do: render(conn, :index, date: pad(@local.day, 2))
-
+  
   def home(conn, _params) do
-    day_index = @local |> NaiveDateTime.to_date |> Date.day_of_week
-    day_of_week = @days_of_week |> Enum.at(day_index - 1) 
-    month = @month |> Enum.at(@local.month - 1)
+    local = NaiveDateTime.local_now()
+
+    day_index = local |> NaiveDateTime.to_date |> Date.day_of_week()
+    month = local.month
 
     conn |> render(
       :home,
-      day: gettext_value(day_of_week),
-      date: pad(@local.day, 2),
-      month_name: gettext_value(month),
-      month_numeric: pad(@local.month, 2),
-      year: pad(@local.year, 4),
+      day: day_index |> get_day_of_week(),
+      date: pad(local.day, 2), # |> dbg(),
+      month_name: month |> get_month(),
+      month_numeric: pad(month, 2),
+      year: pad(local.year, 4),
 
-      season: gettext_value(month |> get_season),
-      is_leap_year: @local.year |> is_leap_year?,
-      leap_year_msg: @local.year |> leap_msg |> gettext_value,
-      next_leap_year: @local.year + 1 |> next_leap_msg
+      season: month |> get_season(),
+      is_leap_year: local.year |> is_leap_year?(),
+      leap_year_msg: local.year |> leap_msg(),
+      next_leap_year: local.year + 1 |> next_leap_msg()
     )
   end
 
@@ -45,15 +40,31 @@ defmodule DateDisplayWeb.PageController do
       else: next_leap_msg(y + 1)
   end
 
-  defp get_season(month) do
-    cond do
-      month in ~w(december january february)  -> "winter"
-      month in ~w(march april may)            -> "spring"
-      month in ~w(june july august)           -> "summer"
-      month in ~w(september october november) -> "autumn"
-    end
-  end
+  defp get_season(month) when month in [12, 1, 2],  do: gettext("winter")
+  defp get_season(month) when month in [3, 4, 5],   do: gettext("spring")
+  defp get_season(month) when month in [6, 7, 8],   do: gettext("summer")
+  defp get_season(month) when month in [9, 10, 11], do: gettext("autumn")
 
-  # Gettext
-  defp gettext_value(value), do: Gettext.gettext(DateDisplayWeb.Gettext, value)
+
+  defp get_day_of_week(1), do: gettext("monday")
+  defp get_day_of_week(2), do: gettext("tuesday")
+  defp get_day_of_week(3), do: gettext("wednesday")
+  defp get_day_of_week(4), do: gettext("thursday")
+  defp get_day_of_week(5), do: gettext("friday")
+  defp get_day_of_week(6), do: gettext("saturday")
+  defp get_day_of_week(7), do: gettext("sunday")
+
+
+  defp get_month(1), do: gettext("january")
+  defp get_month(2), do: gettext("february")
+  defp get_month(3), do: gettext("march")
+  defp get_month(4), do: gettext("april")
+  defp get_month(5), do: gettext("may")
+  defp get_month(6), do: gettext("june")
+  defp get_month(7), do: gettext("july")
+  defp get_month(8), do: gettext("august")
+  defp get_month(9), do: gettext("september")
+  defp get_month(10), do: gettext("october")
+  defp get_month(11), do: gettext("november")
+  defp get_month(12), do: gettext("december")
 end

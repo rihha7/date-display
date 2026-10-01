@@ -16,27 +16,21 @@
 
     <.live_title default="DateDisplay" suffix=" · Phoenix Framework" phx-no-format>{assigns[:page_title]}</.live_title>
     <title>Date Display</title>
+
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}></script>
   </head>
 
 
   <body class="flex flex-col min-h-screen bg-linear-to-br from-[#A4E9F9] from-40% via-[#FBD3FA] via-70% via-[#C2BCF5] to-[#9DBFF9] relative">
-
     <.render_dots top_left count={5} bg_colour={"bg-black"} />
     <.render_dots bottom_right count={5} />
 
     {@inner_content}
   
     <footer class="flex text-black justify-between pb-2 pl-2 pr-3.5 select-none">
-      <!-- left -->
-      <.lang_btns />      
-
-      <!-- right -->
-      <.date_of_completion />
+      <.lang_btns />           <!-- left -->
+      <.date_of_completion />  <!-- right -->
     </footer>
   </body>
-
-
-  
 </html>
